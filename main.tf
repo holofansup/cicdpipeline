@@ -26,6 +26,7 @@ data "aws_ami" "ami" {
 }
 
 resource "aws_instance" "server" {
+  count = 2
   ami           = data.aws_ami.ami.id
   instance_type = "t3.micro"
   subnet_id = "subnet-0a3474edcf6593ef0"
