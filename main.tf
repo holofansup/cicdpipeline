@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-east-1"
 }
 
 data "aws_ami" "ami" {
@@ -28,7 +28,7 @@ data "aws_ami" "ami" {
 resource "aws_instance" "server" {
   ami           = data.aws_ami.ami.id
   instance_type = "t3.micro"
-  subnet_id = "subnet-020f103c777289171"
+  subnet_id = "subnet-0a3474edcf6593ef0"
   associate_public_ip_address = true
   lifecycle {
     create_before_destroy = true
